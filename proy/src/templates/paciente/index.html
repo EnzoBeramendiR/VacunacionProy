@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block body %}
+      <h1>Paciente</h1>
+      <section class="content">
+        
+                  <table id="dataphone" class="table table-border table-striped">
+                      <head align="center">
+                          <tr>
+                              <th>Nombre</th>
+                              <th>Lugar</th>
+                              <th>Distrito</th>
+                              <th>Edad</th>
+                              <th>Acción</th>
+                          </tr>
+                      </head>
+                      <body>
+                          {% if data|length == 0 %}
+                          <tr>
+                              <td>Sin datos</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                          </tr>
+                          {% else %}
+                          <tr>
+                            {% for row in data %}
+                            <th>{{ row[1] }}</th>
+                            <th>{{ row[4] }}</th>
+                            <th>{{ row[5] }}</th>
+                            <th>{{ row[6] }}</th>
+                            <th align="center">
+                                <a href="/paciente/update/{{ row[0] }}">
+                                    <button type="button" class="btn btn-sm btn-warning btn-flat" title="update">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </a>
+                                
+                                <a href="/paciente/delete/{{ row[0] }}">
+                                    <button type="button" class="btn btn-sm btn-warning btn-flat" title="delete">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </a>
+                            </th>
+                          </tr>
+                          {% endfor %}
+                          {% endif %}
+                      </body>
+                  </table>
+              </div>
+          </div>
+      </section>
+{% endblock %}

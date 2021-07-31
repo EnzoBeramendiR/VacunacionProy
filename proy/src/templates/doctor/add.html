@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+      <section class="content">
+            <div class="box box-info">
+                  <div class="box-header with-border">
+                        <center>
+                              <h3 class="box-title">Nuevo usuario</h3>
+                        </center>                        
+                  </div>
+            </div>
+
+            <form class="form-horizontal" method="POST" action="/doctor/adddoctor">
+                  <div class="box-body">
+                        <div>
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label">Nombre</label>                                                
+                                    <div class="col-sm-10">
+                                        <input name="nomb" type="text" class="form-control" placeholder="Nombre" autocomplete="off"
+                                            required>
+                                    </div>                                                     
+                              </div>
+                              
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label">Contrasena</label>                                                
+                                    <div class="col-sm-10">
+                                        <input name="pass" type="text" class="form-control" placeholder="Contrasena" autocomplete="off"
+                                            required>
+                                    </div>                                                     
+                              </div>
+
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label">Funcion</label>                                                
+                                    <div class="col-sm-10">
+                                        <input name="func" type="text" class="form-control" placeholder="Doctor(D) o Paciente(P)" autocomplete="off"
+                                            required>
+                                    </div>                                                     
+                              </div>
+
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label">Lugar</label>                                                
+                                    <div class="col-sm-10">
+                                        <input name="lugar" type="text" class="form-control" placeholder="Lugar de Vacunacion" autocomplete="off"
+                                            required>
+                                    </div>                                                     
+                              </div>
+
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label">Distrito</label>                                                
+                                    <div class="col-sm-10">
+                                        <input name="distri" type="text" class="form-control" placeholder="Distrito" autocomplete="off"
+                                            required>
+                                    </div>                                                     
+                              </div>
+
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label">Edad</label>                                                
+                                    <div class="col-sm-10">
+                                        <input name="edad" type="text" class="form-control" placeholder="Edad" autocomplete="off"
+                                            required>
+                                    </div>                                                     
+                              </div>
+                              
+                              <div class="box-footer">
+                                    <a href="/doctor/"> <button type="button" class="btn btn-default">Cancelar</button> </a>
+                                    <input type="submit" name="save" class="btn btn-info pull-right" value="save">
+                              </div>
+                        </div>
+                  </div>
+            </form>
+      </section>
+</div>
+{% endblock %}
